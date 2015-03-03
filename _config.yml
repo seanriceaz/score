@@ -1,6 +1,7 @@
 # Jekyll Configuration
 
 name:        Score
+baseurl:	 /score
 
 # Dependencies
 markdown:    redcarpet
@@ -9,7 +10,7 @@ markdown:    redcarpet
 permalink:   pretty
 
 # Custom Vars
-source:      _build
+source:      
 destination: _deploy
 exclude:     [".gitignore", ".editorconfig", "README.md", "config.rb", "scss", "bower.json", ".bowerrc"]
 
