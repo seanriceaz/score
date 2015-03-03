@@ -2,3 +2,4 @@
 _deploy
 
 .sass-cache
+*.scssc
