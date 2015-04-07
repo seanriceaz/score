@@ -1,4 +1,5 @@
 $(function(){
+  launchIntoFullscreen(document.documentElement); // Launch full screen (Thanks http://davidwalsh.name/fullscreen)
 	resetGame();
 	$('#team1, #team2').on('singletap',function(e){
     incrementScore(e);
@@ -29,4 +30,18 @@ function reduceScore(e){
 
 function resetGame(){
 	$('label').data('score',0).html('0');
+}
+
+//Full screen API
+// Find the right method, call on correct element (Thanks http://davidwalsh.name/fullscreen)
+function launchIntoFullscreen(element) {
+  if(element.requestFullscreen) {
+    element.requestFullscreen();
+  } else if(element.mozRequestFullScreen) {
+    element.mozRequestFullScreen();
+  } else if(element.webkitRequestFullscreen) {
+    element.webkitRequestFullscreen();
+  } else if(element.msRequestFullscreen) {
+    element.msRequestFullscreen();
+  }
 }
