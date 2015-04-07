@@ -1,7 +1,8 @@
 $(function(){
-  launchIntoFullscreen(document.documentElement); // Launch full screen (Thanks http://davidwalsh.name/fullscreen)
+  //launch full screen needs to happen within an event handler (like a button tap).
+  //launchIntoFullscreen(document.documentElement); // Launch full screen (Thanks http://davidwalsh.name/fullscreen)
 	resetGame();
-	$('#team1, #team2').on('singletap',function(e){
+	$('#team1, #team2').on('tap',function(e){
     incrementScore(e);
   });
   $('#team1, #team2').on('swipeleft',function(e){ //could replace this with just swipe
