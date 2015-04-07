@@ -1,3 +1,7 @@
+/* ==========================================================================
+    Main Styles for Score, a simple web app by Sean Rice
+    Github: http://github.com/seanriceaz 
+   ========================================================================== */
 body{
 	font-family: 'Dosis', sans-serif;
 	font-weight:400;
@@ -24,16 +28,18 @@ h2, h3, h4{
 #team1{
 	left:0;
 	right:50%;
-	background:#333;
+	background:#19FDFF;
 	color:white;
 	z-index:1;
+  text-shadow:0 2px 0 rgba(0,0,0,.5);
 }
 #team2{
 	z-index:1;
 	right:0;
 	left:50%;
-	background:#999;
-	color:black;
+	background:#FFD700;
+	color:white;
+  text-shadow:0 2px 0 rgba(0,0,0,.5);
 }
 #time{
 	left:40%;
@@ -57,4 +63,18 @@ h2, h3, h4{
 	z-index:3;
 	top:50%;
 	width:100%;
+}
+
+/* Special setup for portrait screens */
+@media screen and (orientation: portrait)
+{
+	#team1{
+		left:0;
+		bottom:50%;
+	}
+	#team2{
+		right:0;
+		top:50%;
+	}
+
 }
