@@ -10,7 +10,7 @@ markdown:    redcarpet
 permalink:   pretty
 
 # Custom Vars
-source:      /
+#source:      /
 destination: _deploy
 exclude:     [".gitignore", ".editorconfig", "README.md", "config.rb", "scss", "bower.json", ".bowerrc"]
 
