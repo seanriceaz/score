@@ -1,11 +1,15 @@
 $(function(){
   //launch full screen needs to happen within an event handler (like a button tap).
-  //launchIntoFullscreen(document.documentElement); // Launch full screen (Thanks http://davidwalsh.name/fullscreen)
+  $('#launch').on('tap',function(e){
+    e.preventDefault();
+    launchIntoFullscreen(document.documentElement); // Launch full screen (Thanks http://davidwalsh.name/fullscreen)
+    $("#instructions").addClass('hidden');
+  });
 	resetGame();
-	$('#team1, #team2').on('tap',function(e){
+	$('#team1, #team2').on('tap swiperight swipeup',function(e){
     incrementScore(e);
   });
-  $('#team1, #team2').on('swipeleft',function(e){ //could replace this with just swipe
+  $('#team1, #team2').on('swipeleft swipedown',function(e){ //could replace this with just swipe
     reduceScore(e);
   });
 	$('#restart').on('tap',resetGame);

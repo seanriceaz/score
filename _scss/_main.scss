@@ -4,20 +4,19 @@
    ========================================================================== */
 body{
 	font-family: 'Dosis', sans-serif;
-	font-weight:400;
+	font-weight:200;
 }
 h2, h3, h4{
-	font-weight:200;
+	font-weight:400;
 }
 #team1, #team2, #time{
 	position:absolute;
 	top:0;
 	bottom:0;
 	text-align:center;
-	height:100%;
 	label
 	{
-		font-size:300px;
+		font-size:200px;
 		position:absolute;
 		top:50%;
 		margin-top:-.5em;
@@ -56,13 +55,46 @@ h2, h3, h4{
 		&:active{
 			background:#ccc;
 		}
+		&:focus{
+			outline:none;
+			box-shadow:0;
+		}
 	}
 }
 #control{
 	position:absolute;
 	z-index:3;
 	top:50%;
-	width:100%;
+	left:0;
+	right:0;
+}
+
+#instructions{
+	@include transition();
+	background:rgba(0,0,0,.75);
+	position:absolute;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	z-index:1000;
+	.window{
+		position:absolute;
+		background:white;
+		padding:10px;
+		top:10px;
+		right:10px;
+		left:10px;
+	}
+	&.hidden{
+		background:rgba(0,0,0,0);
+		bottom:100%;
+		top:-10%;
+		overflow:hidden;
+		.window{
+			display:none;
+		}
+	}
 }
 
 /* Special setup for portrait screens */
@@ -71,14 +103,10 @@ h2, h3, h4{
 	#team1{
 		right:0;
 		bottom:50%;
-    width:100%;
-    height:auto;
 	}
 	#team2{
 		left:0;
 		top:50%;
-    width:100%;
-    height:auto;
 	}
 
 }
