@@ -1,7 +1,7 @@
 # Jekyll Configuration
 
 name:        Score
-#baseurl:	 /score
+baseurl:	 /score
 
 # Dependencies
 markdown:    redcarpet
