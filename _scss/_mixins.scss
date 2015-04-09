@@ -6,7 +6,7 @@
 /*==========================================================================
   Transition   
   ========================================================================== */
-@mixin transition($speed:3s){
+@mixin transition($speed:.3s){
   -webkit-transition: all $speed;
   transition: all $speed;
 }
