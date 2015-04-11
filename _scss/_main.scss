@@ -2,6 +2,8 @@
     Main Styles for Score, a simple web app by Sean Rice
     Github: http://github.com/seanriceaz 
    ========================================================================== */
+*{box-sizing:border-box}
+
 body{
 	font-family: 'Dosis', sans-serif;
 	font-weight:200;
@@ -9,25 +11,37 @@ body{
 h2, h3, h4{
 	font-weight:400;
 }
-#team1, #team2, #time{
+
+#team1, #team2, #controls{
 	position:absolute;
 	top:0;
 	bottom:0;
 	text-align:center;
+	h2{
+		position:absolute;
+		top:10px;
+		width:100%;
+		text-align:center;
+	}
 	label
 	{
 		font-size:200px;
 		position:absolute;
 		top:50%;
+		line-height:1;
 		margin-top:-.5em;
 		width:100%;
 		display:block;
+	}
+	h2, label{
+		-webkit-transition:all .3s ease-in-out;
+		transition:all .3s ease-in-out;
 	}
 }
 #team1{
 	left:0;
 	right:50%;
-	background:#19FDFF;
+	background:#F7CB03;
 	color:white;
 	z-index:1;
   text-shadow:0 2px 0 rgba(0,0,0,.5);
@@ -36,24 +50,28 @@ h2, h3, h4{
 	z-index:1;
 	right:0;
 	left:50%;
-	background:#FFD700;
+	background:#11B2AA;
 	color:white;
   text-shadow:0 2px 0 rgba(0,0,0,.5);
 }
-#time{
+#controls{
 	left:40%;
 	right:40%;
 
 	button{
+		display:block;
 		border-radius:1000px;
 		font-size:30px;
-		border:1px solid white;
-		background: #eee;
+		border:0;
+		background: lighten(#89B2B1,30%);
 		width:50px;
 		height:50px;
 		margin-top:-25px;
+		margin-left:-25px;
+		line-height:1;
+		padding:0;
 		&:active{
-			background:#ccc;
+			background:#89B2B1;
 		}
 		&:focus{
 			outline:none;
@@ -61,12 +79,16 @@ h2, h3, h4{
 		}
 	}
 }
-#control{
+#centerbutton, #topbutton, #bottombutton{
 	position:absolute;
 	z-index:3;
+	left:50%;
+}
+#centerbutton{
 	top:50%;
-	left:0;
-	right:0;
+}
+#topbutton{
+	top:33.333%;
 }
 
 #instructions{
@@ -77,14 +99,31 @@ h2, h3, h4{
 	left:0;
 	right:0;
 	bottom:0;
+	padding:10px;
 	z-index:1000;
 	.window{
-		position:absolute;
+		position:relative;
 		background:white;
 		padding:10px;
-		top:10px;
-		right:10px;
-		left:10px;
+		margin:0 auto;
+		max-width:300px;
+		text-align:center;
+
+	}
+	button{
+		display:block;
+		width:100%;
+		height:60px;
+		border:none;
+		background:#B21290;
+		color:white;
+		font-weight:400;
+		font-size:24px;
+		&:focus, &:hover, &:active{
+			outline:none;
+			border:none;
+			background: darken(#B21290, 5%);
+		}
 	}
 	&.hidden{
 		background:rgba(0,0,0,0);
@@ -93,6 +132,14 @@ h2, h3, h4{
 		overflow:hidden;
 		.window{
 			display:none;
+		}
+	}
+}
+//updown mode
+.updown{
+	#team1{
+		h2, label{
+			transform:rotate(180deg);
 		}
 	}
 }
@@ -107,6 +154,27 @@ h2, h3, h4{
 	#team2{
 		left:0;
 		top:50%;
+		h2{
+			top:auto;
+			bottom:10px;
+		}
 	}
-
+	#controls{
+		top:45%;
+		bottom:45%;
+		left:0;
+		right:0;
+		button{
+			margin-left:-25px;
+		}
+	}
+	#centerbutton, #topbutton, #bottombutton{
+		top:50%;
+	}
+	#centerbutton{
+		left:50%;
+	}
+	#topbutton{
+		left:33.333%;
+	}
 }
