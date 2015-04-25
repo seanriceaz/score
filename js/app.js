@@ -6,13 +6,35 @@ $(function(){
     $("#instructions").addClass('hidden');
   });
 	resetGame();
-	$('#team1, #team2').on('tap swiperight swipeup',function(e){
-    incrementScore(e);
+	$('#team1, #team2').on('swiperight.inc swipeup.inc',function(e){
+    //If we're flipped, do the opposite
+    if($(this).is("#team1")&&$('body').is('.updown')){
+      reduceScore(e);
+    } else {
+      incrementScore(e);
+    }
+    
   });
-  $('#team1, #team2').on('swipeleft swipedown',function(e){ //could replace this with just swipe
-    reduceScore(e);
+  $('#team1, #team2').on('swipeleft.red swipedown.red',function(e){
+    //If we're flipped, do the opposite
+    if($(this).is("#team1")&&$('body').is('.updown')){
+      incrementScore(e);
+    } else {
+      reduceScore(e);
+    }
   });
 	$('#restart').on('tap',resetGame);
+  //flip orientation for 2player game
+  $('#updown').on('tap',function(e){
+    if($(this).is('.ion-arrow-swap')){
+      $(this).removeClass('ion-arrow-swap').addClass('ion-arrow-down-a');
+      $('body').addClass('updown');
+
+    } else { 
+      $(this).addClass('ion-arrow-swap').removeClass('ion-arrow-down-a');
+      $('body').removeClass('updown');
+    }
+  });;
 });
 
 function incrementScore(e){
