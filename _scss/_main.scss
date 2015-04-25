@@ -154,6 +154,7 @@ h2, h3, h4{
 .updown{
 	#team1 .inner{
 		//h2, label{
+			-webkit-transform:rotate(180deg);
 			transform:rotate(180deg);
 		//}
 	}
@@ -193,8 +194,10 @@ h2, h3, h4{
 		left:25%;
 	}
 	.updown #team1 .inner{
+		-webkit-transform:rotate(0deg);
 		transform:rotate(0deg);
 		h2, label{
+			-webkit-transform:rotate(180deg);
 			transform:rotate(180deg);
 		}
 	}
