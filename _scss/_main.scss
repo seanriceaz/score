@@ -5,6 +5,8 @@
 *{box-sizing:border-box}
 
 body{
+	margin:0;
+	padding:0;
 	font-family: 'Dosis', sans-serif;
 	font-weight:200;
 }
@@ -93,6 +95,9 @@ h2, h3, h4{
 	.ion-arrow-swap{
 		-webkit-transform:rotate(90deg);
 		transform:rotate(90deg);
+	}
+	.ion-refresh{
+		text-indent:.05em;
 	}
 }
 #centerbutton, #topbutton, #bottombutton{
